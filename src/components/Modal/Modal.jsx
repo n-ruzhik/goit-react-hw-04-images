@@ -16,14 +16,6 @@ export default function Modal({ onClose, children }) {
     };
   }, [onClose]);
 
-  //   componentDidMount() {
-  //     window.addEventListener('keydown', this.handleKeyDown);
-  //   }
-
-  //   componentWillUnmount() {
-  //     window.removeEventListener('keydown', this.handleKeyDown);
-  //   }
-
   const handleBackdropClick = event => {
     if (event.currentTarget === event.target) {
       onClose();
@@ -44,6 +36,5 @@ export default function Modal({ onClose, children }) {
         {children}
       </div>
     </div>
-    //  modalRoot
   );
 }

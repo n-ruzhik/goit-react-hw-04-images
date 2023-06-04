@@ -55,59 +55,8 @@ export default function App() {
     setUrlModal('');
   };
 
-  // onRenderImages(query, page) {
-  //   this.setState({
-  //     onLoading: true,
-  //   });
-
-  //   api
-  //     .fetchImage(query, page)
-  //     .then(({ hits, totalHits }) => {
-  //       if (!hits.length) {
-  //         this.setState({
-  //           isEmpty: true,
-  //         });
-  //         return;
-  //       }
-  //       this.setState({
-  //         images: [...this.state.images, ...hits],
-  //         showBtn: this.state.page < Math.ceil(totalHits / 12),
-  //       });
-  //     })
-  //     .catch(error => {
-  //       this.setState({ error: `${error}` });
-  //     })
-  //     .finally(() => this.setState({ onLoading: false }));
-  // }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   const newQuery = this.state.query;
-  //   const newPage = this.state.page;
-
-  //   if (
-  //     prevState.query !== this.state.query ||
-  //     prevState.page !== this.state.page
-  //   ) {
-  //     this.onRenderImages(newQuery, newPage);
-  //   }
-  // }
-
-  // openModal = url => {
-  //   this.setState(({ showModal }) => ({
-  //     showModal: !showModal,
-  //     urlModal: url,
-  //   }));
-  // };
-
-  // closeModal = () => {
-  //   this.setState(({ showModal }) => ({
-  //     showModal: !showModal,
-  //     urlModal: '',
-  //   }));
-  // };
-
   const toggleOnLoading = () => {
-    setOnLoading(!onLoading);
+    setOnLoading(onLoading => !onLoading);
   };
 
   const handleFormSubmit = query => {
@@ -122,28 +71,6 @@ export default function App() {
   const handleIncrement = () => {
     setPage(page => page + 1);
   };
-
-  // toggleOnLoading = () => {
-  //   this.setState(({ onLoading }) => ({ onLoading: !onLoading }));
-  // };
-
-  // handleFormSubmit = query => {
-  //   this.setState({
-  //     images: [],
-  //     query,
-  //     page: 1,
-  //     showBtn: false,
-  //     total: 'null',
-  //     error: '',
-  //     isEmpty: false,
-  //   });
-  // };
-
-  // handleIncrement = () => {
-  //   this.setState(({ page }) => ({
-  //     page: page + 1,
-  //   }));
-  // };
 
   return (
     <div>
